@@ -1,29 +1,36 @@
 *{
     margin:0px;
     padding:0px;
-}
-body{
-    background-color:#ecdeed;
     font-family:sans-serif;
+}
+:root {
+    --base-bg:hsl(223deg 100% 76.98%);
+    --bg: hsl(from var( --base-bg) h s calc(l + 10));
+    --card: hsl(from var( --base-bg) h s calc(l - 20));
+    --p-text: hsl(from var( --base-bg) h s calc(l - 27));
+    --text: white;
+}
+
+body{
+    background-color:var(--base-bg);
+    
 }
 header{
     display:flex;
     height:50px;
     justify-content:space-around;
-    margin:0px;
-    padding:0px;
+    background-color:var(--card);
+    color:var(--text);
+    box-shadow: 5px -7px 18px 5px rgb(0 0 0);
+
 }
-body{
-    background-color:#ecdeed;
-    font-family:sans-serif;
-}
-header{
-    display:flex;
-    height:50px;
-    justify-content:space-around;
-    background-color:#b34cd8;
-    color:white;
-    box-shadow: 0 10px 20px rgb(0 0 0);
+header nav a {
+    text-decoration:none;
+    color:var(--text);
+    font-weight:bold;
+    position:relative;
+    top:15px;
+    margin:12px;
 }
 main{
     display:flex;
@@ -37,13 +44,45 @@ h3{
     align-items:center;
     justify-content:center;
     margin-top:42px;
-    background-color:#b34cd8;
-    width:1200px;
+    width:1300px;
     border-radius:12px;
     position:relative;
     left:112px;
-    box-shadow: 0 4px 15px rgb(0 0 0);
-    background-color:#b34cd8;
+    box-shadow: 4px 7px 20px 0px rgb(0 0 0);
+    background-color:var(--card);
+    color:var(--text);
+}
+.container h3{
+    color:black;
+}
+table {
+    margin:12px 10px 12px 10px;
+    color:var(--bg);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background-color:var(--base-bg);
     color:white;
-    box-shadow: 0 10px 20px rgb(0 0 0);
+}
+
+th {
+    background: var(--p-text);
+    color: white;
+}
+tr td a{
+    display:block;
+    padding:4px;
+    border-radius:7px;
+    border:2px solid var(--text);
+    text-decoration:none;
+    color:white;
+}
+tr td a:hover{
+    background-color:var(--card);
+    transform: translateY(-5px);
 }
