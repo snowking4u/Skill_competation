@@ -9,9 +9,11 @@
 <body>
     <header>
         <h1>Collage Workshop Program</h1>
-        <a href="index.php"><button type="button">Home</button></a>
-        <a href="workshop.php"><button type="button">Register Workshop</button></a>
-        <a href="logout.php"><button type="button">Logout</button></a>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="workshop.php">Register Workshop</a>
+            <a href="logout.php">Logout</a>
+        </nav>
     </header>
     <main>
         <?php
@@ -22,11 +24,44 @@
             header("Location: login.php");
             exit();
         }
-
-        echo "Welcome " . $_SESSION['user_name'];
-
         ?>
+        <div class="overview">
+        <table>
+            <tr>
+                <th>Workshop</th>
+                <th>Registered</th>
+            </tr>
+
+            <?php
+
+            $con=mysqli_connect("localhost","root","","temp");
+            $sql = "SELECT workshop, COUNT(*) AS total
+            FROM students
+            GROUP BY workshop";
+
+            $result = $con->query($sql);
+            $grand_total = 0;
+
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>".$row['workshop']."</td>";
+                echo "<td>".$row['total']."</td>";
+                echo "</tr>";
+
+                $grand_total += $row['total'];
+            }
+            ?>
+
+            <tr>
+                <th>Total</th>
+                <th><?php echo $grand_total; ?></th>
+            </tr>
+        </table>
+</div>
         <div class="container">
+            <?php
+            echo "<h3>Welcome " . $_SESSION['user_name']."</h3>";
+            ?>
             <h3>Registered Students Details</h3>
             <table>
                 <tr>
@@ -39,6 +74,7 @@
                     <th>Mobile</th>
                     <th>Gender</th>
                     <th>Workshop JOIN</th>
+                    <th>Action</th>
                 </tr>
                 <?php
                     $con=mysqli_connect("localhost","root","","temp");

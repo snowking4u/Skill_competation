@@ -33,10 +33,20 @@ header nav a {
     margin:12px;
 }
 main{
-    display:flex;
+    display:inline-grid;
+    justify-content:center;
 }
 h3{
     margin-top:22px ;
+}
+.overview{
+    margin:12px;
+    overflow:hidden;
+    border-radius:12px;
+    width:412px;
+    background-color:var(--card);
+    color:var(--text);
+    box-shadow: 4px 7px 20px 0px rgb(0 0 0);
 }
 .container{
     display:flex;
@@ -53,7 +63,7 @@ h3{
     color:var(--text);
 }
 .container h3{
-    color:black;
+    color:var(--text);
 }
 table {
     margin:12px 10px 12px 10px;
