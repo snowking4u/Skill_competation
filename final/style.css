@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+:root{
+    --bg:#F8F7F4;
+    --card:#0057ff;
+    --btn:#001a73;
+    --p-bg:#5c8ff2;
+    --text-b:#F8F7F4;
+    --text:#0057ff;
+    --header-s: 0 4px 12px rgba(0,0,0,0.25);
+    --card-s:0 12px 30px rgba(0,0,0,0.30);
+
+}
+body{
+    background-color:var(--p-bg);
+}
+header{
+    display:flex;
+    justify-content:space-around;
+    background-color:var(--card);
+    height:2.8rem;
+    box-shadow:var(--header-s);
+}
+header h1 {
+    color:var(--text-b)
+}
+header nav a{
+    margin:1rem;
+    position:relative;
+    color:var(--text-b);
+    font-weight:bolder;
+    text-decoration:none;
+    top:0.8rem;
+}
+header nav a:hover{
+    padding:0.4rem;
+    border-radius:0.6rem;
+    background-color:var(--p-bg)
+}
+.box{
+    background-color:var(--bg);
+    position:relative;
+    left:9rem;
+    top:2rem;
+    margin:2rem;
+    width:70%;
+    padding:2rem;
+    text-align:center;
+    border-radius:1rem;
+    box-shadow:var(--card-s);
+}
+.box h1, h4 {
+    color:var(--text);
+}
+table{
+    margin:2rem;
+}
+table tr th{
+    padding:0.7rem;
+    color:var(--text-b);
+    background-color:var(--card);
+    border-collapse:collapse;
+}
+table tr td{
+    padding:0.4rem;
+    color:var(--text-b);
+    background-color:var(--p-bg);
+    border-collapse:collapse;
+    font-weight:bold;
+}
+tr:hover td {
+    background-color:var(--card);
+}
+.f-box{
+    margin:6rem;
+    position:relative;
+    justify-content:center;
+    background-color:var(--bg);
+    text-align:center;
+    padding:1rem;
+    left:30%;
+    border-radius:2rem;
+    height:30rem;
+    width:20rem;
+    box-shadow:var(--card-s);
+}
+.f-box h1{
+    margin:12px;
+    color:var(--text);
+}
+form{
+    padding:1rem;
+    margin:12px;
+    position:relative;
+    top:3rem;
+}
+form label{
+    margin:12px;
+    display:flex;
+    font-weight:bold;
+    color:var(--text);
+}
+form input{
+    display:flex;
+    width:100%;
+    margin:2px;
+    border-color:var(--card);
+    padding:0.3rem;
+    border-radius:0.3rem;
+}
+::placeholder{
+    color: #000000;
+    font-size:0.9rem;
+    font-style: italic;
+    opacity: 1;
+}
+#workshop{
+    padding:0.5rem;
+    border-color:var(--card);
+    border-radius:0.3rem;
+}
+
+button{
+    margin-top:1rem;
+    padding:1rem;
+    width:10rem;
+    color:var(--text-b);
+    border:none;
+    border-radius:2rem;
+    font-weight:bold;
+    box-shadow:var(--header-s);
+    cursor:pointer;
+    background-color:var(--card);
+    letter-spacing:0.3rem;
+    
+}
+button:hover{
+    color:var(--text);
+    background-color:var(--text-b)
+}
+.r-box{
+    margin:6rem;
+    position:relative;
+    justify-content:center;
+    text-align:center;
+    background-color:var(--bg);
+    padding:1rem;
+    left:18%;
+    border-radius:2rem;
+    height:65rem;
+    width:45rem;
+    box-shadow:var(--card-s);
+}
+.r-box h1{
+    margin:12px;
+    color:var(--text);
+}
+.w-box{
+    margin:6rem;
+    position:relative;
+    background-color:var(--bg);
+    justify-content:center;
+    text-align:center;
+    padding:1rem;
+    left:18%;
+    border-radius:2rem;
+    height:50rem;
+    width:40rem;
+    box-shadow:var(--card-s);
+}
+.w-box h1{
+    margin:12px;
+    color:var(--text);
+}
+.register-btn {
+    padding:0.5rem;
+    border-radius:2rem;
+    border:none;
+    box-shadow:var(--header-s);
+    background-color:var(--text-b);
+    color:var(--text);
+    text-decoration:none;
+}
+.register-btn:hover{
+    background-color:var(--btn);
+    color:var(--text-b);
+}
+.close-btn{
+    padding:0.5rem;
+    border-radius:2rem;
+    border:none;
+    box-shadow:var(--header-s);
+    background-color:var(--text-b);
+    color:red;
+    letter-spacing:1px;
+}
+.close-btn:hover{
+    background-color:red;
+    color:var(--text-b);
+}
