@@ -77,3 +77,22 @@
                     $con->close();
                 }
                 ?>
+<?php
+
+            $con=mysqli_connect("localhost","root","","temp");
+            $sql = "SELECT workshop, COUNT(*) AS total
+            FROM students
+            GROUP BY workshop";
+
+            $result = $con->query($sql);
+            $grand_total = 0;
+
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>".$row['workshop']."</td>";
+                echo "<td>".$row['total']."</td>";
+                echo "</tr>";
+
+                $grand_total += $row['total'];
+            }
+            ?>
